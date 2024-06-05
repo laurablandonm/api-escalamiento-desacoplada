@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  api-escalamiento-principal:
+    image: laurabm/api-escalamiento-principal:v1
+    build: 
+      context: .
+    ports:
+      - "5011:5011"  # Puerto de la API
+    networks:
+      - api-escalamiento-net
+
+networks: 
+  api-escalamiento-net:
+    external: true
