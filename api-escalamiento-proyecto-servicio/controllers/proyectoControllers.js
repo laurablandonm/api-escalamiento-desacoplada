@@ -1,6 +1,7 @@
 import Proyecto from "../modelos/Proyecto.js";
 
 export const crearProyecto = async (requestProyecto) => {
+    console.log("se esta creando un proyecto...");
     const proyecto = new Proyecto();
     proyecto.numero = requestProyecto.numero;
     proyecto.titulo = requestProyecto.titulo;
@@ -16,7 +17,7 @@ export const crearProyecto = async (requestProyecto) => {
 }
 
 export const listarProyecto = async () => {
-    console.log("estan haciendo una peticion...");
+    console.log("se esta pidiendo la lista...");
     const listaProyecto = await Proyecto.find().populate([
         {
             path:"cliente",
@@ -39,6 +40,7 @@ export const listarProyecto = async () => {
 }
 
 export const editarProyecto = async({numero,titulo,fechaIniciacion,fechaEntrega,cliente,tipoDeProyecto,universidad,etapa}, idProyecto) => {
+    console.log("se esta editando un resgistro...");
     const proyectoRequest = {
         numero,
         titulo,
